@@ -8,7 +8,7 @@
 
 :root{
   /* Lighter composition notebook palette */
-  --bg:#1D2A35; /* very dark blue background as requested (#1D2A35) */
+  --bg:#f8fafc; /* very light marbled background */
   --paper:#ffffff; /* clean white paper for content cards */
   --line-blue:rgba(11,102,214,0.12); /* subtle blue rule */
   --line-red:rgba(214,31,38,0.12); /* subtle red margin */
@@ -79,7 +79,7 @@ main{
   padding:6px 10px;
   border-radius:6px;
 }
-.main-nav a:hover{background:rgba(255,255,255,0.04)}
+.main-nav a:hover{background:rgba(16,24,40,0.03)}
 
 .nav-toggle{
   background:transparent;
@@ -179,7 +179,7 @@ main{
 .email{font-weight:700;background:transparent}
 
 /* Footer */
-.site-footer{color:#ddd;text-align:center;margin-top:10px}
+.site-footer{color:var(--muted);text-align:center;margin-top:10px}
 
 /* Responsive adjustments */
 @media (max-width:820px){

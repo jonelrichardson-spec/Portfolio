@@ -16,23 +16,8 @@ document.addEventListener('DOMContentLoaded', function(){
     }
   });
 
-  // Populate projects with placeholder cards (easy to replace later)
-  const projects = [
-    {title:'AI Project Placeholder 1', desc:'Short description of the project — model, dataset, and impact.', link:'#'},
-    {title:'AI Project Placeholder 2', desc:'Short description of the project — research notes, demos, and tools.', link:'#'},
-    {title:'AI Project Placeholder 3', desc:'Short description of the project — pipeline, results, and code.', link:'#'},
-    {title:'AI Project Placeholder 4', desc:'Short description of the project — exploration and learning goals.', link:'#'}
-  ];
-
-  const grid = document.getElementById('projectsGrid');
-  if(grid){
-    projects.forEach(p => {
-      const el = document.createElement('article');
-      el.className = 'project-card';
-      el.innerHTML = `\n        <h4>${escapeHtml(p.title)}</h4>\n        <p>${escapeHtml(p.desc)}</p>\n        <div class="project-actions">\n          <a class=\"btn small\" href=\"${p.link}\">View</a>\n          <a class=\"btn small ghost\" href=\"${p.link}\">Source</a>\n        </div>\n      `;
-      grid.appendChild(el);
-    });
-  }
+  // Projects are currently static in the HTML. Replace them with dynamic generation
+  // later if you prefer to keep data in a JSON file.
 
   // Copy email button
   const copyBtn = document.getElementById('copyEmail');
