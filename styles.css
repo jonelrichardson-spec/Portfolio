@@ -18,7 +18,7 @@
   --text-on-dark: #071428; /* UI text color for the lighter background (dark navy) */
   --muted: #c3d5f1; /* muted light tone */
   --accent: #ff6b6b; /* red accent */
-  --accent-blue: #5fb3ff; /* blue accent */
+  --accent-blue: var(--bg); /* blue accent now matches background */
   --max-width: 980px;
 }
 
