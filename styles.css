@@ -17,6 +17,7 @@
   --text: #000000; /* main content text (black) for paper sections */
   --text-on-dark: #071428; /* UI text color for the lighter background (dark navy) */
   --link-color: #FFD700; /* bright gold for hyperlinks */
+  --nav-text: #ffffff; /* navigation and brand text */
   --muted: #c3d5f1; /* muted light tone */
   --accent: #ff6b6b; /* red accent */
   --accent-blue: #5fb3ff; /* blue accent for highlights */
@@ -45,15 +46,12 @@ body{
   -moz-osx-font-smoothing:grayscale;
   padding:40px 20px;
   box-sizing:border-box;
-}
 
 /* Page container sizing */
 main{
   max-width:var(--max-width);
   margin:0 auto 40px;
 }
-
-/* Header */
 .site-header{
   max-width:var(--max-width);
   margin:0 auto 20px;
@@ -64,21 +62,20 @@ main{
   justify-content:space-between;
 }
 .brand a{
-  color:var(--text-on-dark);
+  color:var(--nav-text);
   text-decoration:none;
   font-weight:700;
   font-size:1.2rem;
 }
 
 /* Navigation */
-.main-nav ul{
-  list-style:none;
+.main-nav a{
+  color:var(--nav-text);
   margin:0;
   padding:0;
   display:flex;
   gap:12px;
-}
-.main-nav a{
+.main-nav a:hover{background:rgba(255,255,255,0.06);text-decoration:underline}
   color:var(--text-on-dark);
   text-decoration:none;
   padding:6px 10px;
@@ -89,14 +86,14 @@ main{
 .nav-toggle{
   background:transparent;
   border:0;
-  color:var(--text-on-dark);
+  color:var(--nav-text);
   display:none; /* hidden on larger screens */
 }
 .hamburger{
-  width:26px;height:2px;background:var(--text-on-dark);display:block;position:relative;border-radius:2px;
+  width:26px;height:2px;background:var(--nav-text);display:block;position:relative;border-radius:2px;
 }
 .hamburger::before,.hamburger::after{
-  content:'';position:absolute;left:0;width:26px;height:2px;background:var(--text-on-dark);border-radius:2px;}
+  content:'';position:absolute;left:0;width:26px;height:2px;background:var(--nav-text);border-radius:2px;}
 .hamburger::before{top:-8px} .hamburger::after{top:8px}
 
 /* Paper card base */
