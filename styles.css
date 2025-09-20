@@ -14,7 +14,8 @@
   --line-blue: rgba(95, 160, 255, 0.22);
   --line-red: rgba(255, 110, 110, 0.24);
   /* text & accents tuned for dark background */
-  --text: #f8fafc; /* main readable text */
+  --text: #111218; /* main content text (dark) for paper sections */
+  --text-on-dark: #f8fafc; /* UI text color on the dark background */
   --muted: #c3d5f1; /* muted light tone */
   --accent: #ff6b6b; /* red accent */
   --accent-blue: #5fb3ff; /* blue accent */
@@ -29,7 +30,8 @@ html,body{
 body{
   margin:0;
   font-family: 'Roboto', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-  color:var(--text);
+  /* UI-level text (header, nav, UI chrome) should be light on the dark background */
+  color:var(--text-on-dark);
   background-color: var(--bg);
   /* Dark marbling texture: soft highlights/veins on the Egyptian blue base */
   background-image:
@@ -61,7 +63,7 @@ main{
   justify-content:space-between;
 }
 .brand a{
-  color:var(--text);
+  color:var(--text-on-dark);
   text-decoration:none;
   font-weight:700;
   font-size:1.2rem;
@@ -76,7 +78,7 @@ main{
   gap:12px;
 }
 .main-nav a{
-  color:var(--text);
+  color:var(--text-on-dark);
   text-decoration:none;
   padding:6px 10px;
   border-radius:6px;
@@ -86,14 +88,14 @@ main{
 .nav-toggle{
   background:transparent;
   border:0;
-  color:var(--text);
+  color:var(--text-on-dark);
   display:none; /* hidden on larger screens */
 }
 .hamburger{
-  width:26px;height:2px;background:var(--text);display:block;position:relative;border-radius:2px;
+  width:26px;height:2px;background:var(--text-on-dark);display:block;position:relative;border-radius:2px;
 }
 .hamburger::before,.hamburger::after{
-  content:'';position:absolute;left:0;width:26px;height:2px;background:var(--text);border-radius:2px;}
+  content:'';position:absolute;left:0;width:26px;height:2px;background:var(--text-on-dark);border-radius:2px;}
 .hamburger::before{top:-8px} .hamburger::after{top:8px}
 
 /* Paper card base */
@@ -110,6 +112,17 @@ main{
 .paper-inner{
   padding:28px 28px 36px 60px; /* left padding gives space for red margin */
   position:relative;
+}
+
+/* Ensure content inside paper uses a dark, readable color */
+.paper, .paper *{
+  color: var(--text);
+}
+
+/* Links inside paper should use the blue accent for visibility */
+.paper a{
+  color: var(--accent-blue);
+  text-decoration:underline;
 }
 
 /* Ruled lines effect: repeating-linear-gradient for blue lines, and a left red margin */
