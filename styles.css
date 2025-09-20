@@ -8,7 +8,7 @@
 
 :root{
   /* Lighter composition notebook palette */
-  --bg:#f3f4f6; /* light, warm gray background */
+  --bg:#E6F2FF; /* very light desaturated blue background (requested) */
   --paper:#ffffff; /* clean white paper for content cards */
   --line-blue:rgba(11,102,214,0.12); /* subtle blue rule */
   --line-red:rgba(214,31,38,0.12); /* subtle red margin */
