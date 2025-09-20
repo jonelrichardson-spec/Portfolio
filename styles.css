@@ -7,12 +7,13 @@
    Customize colors and fonts at the top variables. */
 
 :root{
-  --bg-dark:#0b0b0b; /* dark marbled base */
-  --paper:#fbfbf7; /* off-white paper */
-  --line-blue:rgba(3,81,157,0.12); /* subtle blue rule */
-  --line-red:rgba(220,20,60,0.15); /* subtle red margin */
-  --text:#222;
-  --muted:#666;
+  /* Lighter composition notebook palette */
+  --bg:#f3f4f6; /* light, warm gray background */
+  --paper:#ffffff; /* clean white paper for content cards */
+  --line-blue:rgba(11,102,214,0.12); /* subtle blue rule */
+  --line-red:rgba(214,31,38,0.12); /* subtle red margin */
+  --text:#111218; /* dark text for high readability */
+  --muted:#667085; /* muted text tone */
   --accent:#d62828; /* red accent */
   --accent-blue:#0b66d6; /* blue accent */
   --max-width:980px;
@@ -27,14 +28,14 @@ body{
   margin:0;
   font-family: 'Roboto', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
   color:var(--text);
-  background-color:var(--bg-dark);
-  /* subtle texture using layered gradients to mimic marbling */
+  background-color:var(--bg);
+  /* lighter marbling texture: subtle, low-contrast gray veins */
   background-image:
-    radial-gradient(circle at 20% 10%, rgba(255,255,255,0.02) 0 2%, transparent 2%),
-    radial-gradient(circle at 80% 30%, rgba(255,255,255,0.02) 0 2%, transparent 2%),
-    linear-gradient(135deg, rgba(255,255,255,0.02) 0 2%, transparent 2%),
-    linear-gradient(90deg, rgba(255,255,255,0.01) 0 1%, transparent 1%);
-  background-size: 1200px 1200px, 900px 900px, 400px 400px, 200px 200px;
+    radial-gradient(circle at 10% 10%, rgba(0,0,0,0.02) 0 3%, transparent 4%),
+    radial-gradient(circle at 80% 30%, rgba(0,0,0,0.015) 0 3%, transparent 4%),
+    linear-gradient(135deg, rgba(0,0,0,0.01) 0 2%, transparent 2%),
+    linear-gradient(90deg, rgba(255,255,255,0.6), rgba(255,255,255,0.4));
+  background-size: 1000px 1000px, 800px 800px, 600px 600px, 200px 200px;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
   padding:40px 20px;
@@ -51,7 +52,6 @@ main{
 .site-header{
   max-width:var(--max-width);
   margin:0 auto 20px;
-  color: #fff;
 }
 .header-inner{
   display:flex;
@@ -59,7 +59,7 @@ main{
   justify-content:space-between;
 }
 .brand a{
-  color:#fff;
+  color:var(--text);
   text-decoration:none;
   font-weight:700;
   font-size:1.2rem;
@@ -74,7 +74,7 @@ main{
   gap:12px;
 }
 .main-nav a{
-  color:#ddd;
+  color:var(--text);
   text-decoration:none;
   padding:6px 10px;
   border-radius:6px;
@@ -84,25 +84,26 @@ main{
 .nav-toggle{
   background:transparent;
   border:0;
-  color:#fff;
+  color:var(--text);
   display:none; /* hidden on larger screens */
 }
 .hamburger{
-  width:26px;height:2px;background:#fff;display:block;position:relative;border-radius:2px;
+  width:26px;height:2px;background:var(--text);display:block;position:relative;border-radius:2px;
 }
 .hamburger::before,.hamburger::after{
-  content:'';position:absolute;left:0;width:26px;height:2px;background:#fff;border-radius:2px;}
+  content:'';position:absolute;left:0;width:26px;height:2px;background:var(--text);border-radius:2px;}
 .hamburger::before{top:-8px} .hamburger::after{top:8px}
 
 /* Paper card base */
 .paper{
   background:var(--paper);
   margin:24px 8px;
-  border-radius:6px;
-  box-shadow:0 6px 18px rgba(0,0,0,0.28);
+  border-radius:8px;
+  /* slightly stronger but soft shadow so papers read above a light background */
+  box-shadow:0 8px 18px rgba(16,24,40,0.06);
   position:relative;
   overflow:hidden;
-  border:1px solid rgba(0,0,0,0.06);
+  border:1px solid rgba(16,24,40,0.04);
 }
 .paper-inner{
   padding:28px 28px 36px 60px; /* left padding gives space for red margin */
@@ -116,20 +117,21 @@ main{
   background-image:
     repeating-linear-gradient(to bottom, transparent 0 28px, var(--line-blue) 28px 30px),
     linear-gradient(to right, transparent 52px, var(--line-red) 52px 54px, transparent 54px);
-  opacity:0.95;
+  /* keep lines visible on a light background but subtle */
+  opacity:0.9;
   pointer-events:none;
 }
 
 /* Torn edge at the top of each paper */
 .paper::after{
   content:'';
-  position:absolute;left:0;right:0;top:-12px;height:24px;
+  position:absolute;left:0;right:0;top:-10px;height:20px;
   background:
-    radial-gradient(circle at 10% 20%, rgba(0,0,0,0.04) 8px, transparent 10px),
-    radial-gradient(circle at 30% 40%, rgba(0,0,0,0.04) 8px, transparent 10px),
-    radial-gradient(circle at 50% 25%, rgba(0,0,0,0.04) 8px, transparent 10px),
-    linear-gradient(180deg, rgba(255,255,255,0.7), rgba(255,255,255,1));
-  transform:rotate(-0.6deg);
+    radial-gradient(circle at 10% 20%, rgba(0,0,0,0.02) 6px, transparent 10px),
+    radial-gradient(circle at 30% 40%, rgba(0,0,0,0.02) 6px, transparent 10px),
+    radial-gradient(circle at 50% 25%, rgba(0,0,0,0.02) 6px, transparent 10px),
+    linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,1));
+  transform:rotate(-0.3deg);
 }
 
 /* Headings with handwriting font to mimic notebook writing */
