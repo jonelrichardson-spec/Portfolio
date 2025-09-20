@@ -8,7 +8,7 @@
 
 :root{
   /* Lighter composition notebook palette (lighter blue background) */
-  --bg: #dbe9ff; /* much lighter blue (about 10 shades lighter than #112A68) */
+  --bg: #26468F; /* medium Egyptian-blue variant per request */
   --paper: #ffffff; /* white paper for content cards */
   /* ruled line colors - stronger but still subtle */
   --line-blue: rgba(95, 160, 255, 0.22);
@@ -16,6 +16,7 @@
   /* text & accents tuned for dark background */
   --text: #000000; /* main content text (black) for paper sections */
   --text-on-dark: #071428; /* UI text color for the lighter background (dark navy) */
+  --link-color: #FFD700; /* bright gold for hyperlinks */
   --muted: #c3d5f1; /* muted light tone */
   --accent: #ff6b6b; /* red accent */
   --accent-blue: var(--bg); /* blue accent now matches background */
@@ -123,6 +124,7 @@ main{
 .paper a{
   color: var(--accent-blue);
   text-decoration:underline;
+  color: var(--link-color); /* use the new gold link color for contrast */
 }
 
 /* Explicitly ensure common text elements inside paper are black for readability */
