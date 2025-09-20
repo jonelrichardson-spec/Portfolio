@@ -14,7 +14,7 @@
   --line-blue: rgba(95, 160, 255, 0.22);
   --line-red: rgba(255, 110, 110, 0.24);
   /* text & accents tuned for dark background */
-  --text: #111218; /* main content text (dark) for paper sections */
+  --text: #000000; /* main content text (black) for paper sections */
   --text-on-dark: #f8fafc; /* UI text color on the dark background */
   --muted: #c3d5f1; /* muted light tone */
   --accent: #ff6b6b; /* red accent */
@@ -124,6 +124,20 @@ main{
   color: var(--accent-blue);
   text-decoration:underline;
 }
+
+/* Explicitly ensure common text elements inside paper are black for readability */
+.paper h1, .paper h2, .paper h3, .paper h4, .paper h5, .paper h6,
+.paper p, .paper li, .paper span, .paper label {
+  color: var(--text) !important;
+}
+
+/* Buttons/links inside paper should be readable: use darker text or visible backgrounds */
+.paper .btn, .paper .btn *{
+  color: #071428; /* dark text on light button backgrounds */
+}
+
+/* If there are ghost links inside paper, ensure sufficient contrast */
+.paper a.ghost, .paper a.ghost:visited{ color: var(--accent-blue); }
 
 /* Ruled lines effect: repeating-linear-gradient for blue lines, and a left red margin */
 .paper::before{
