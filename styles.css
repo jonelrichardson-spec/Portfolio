@@ -7,17 +7,18 @@
    Customize colors and fonts at the top variables. */
 
 :root{
-  /* Dark composition notebook palette */
-  --bg:#11122D; /* deep dark blue background (requested) */
-  --paper:#ffffff; /* white paper for content cards */
-  /* Increase line opacity for visibility on dark background */
-  --line-blue:rgba(11,102,214,0.22);
-  --line-red:rgba(214,31,38,0.24);
-  --text:#f8fafc; /* light main text for readability */
-  --muted:#b8c2d1; /* muted light tone */
-  --accent:#ff6b6b; /* brighter red accent */
-  --accent-blue:#4fb3ff; /* brighter blue accent */
-  --max-width:980px;
+  /* Dark composition notebook palette (Egyptian blue background) */
+  --bg: #112A68; /* requested main background */
+  --paper: #ffffff; /* white paper for content cards */
+  /* ruled line colors - stronger but still subtle */
+  --line-blue: rgba(95, 160, 255, 0.22);
+  --line-red: rgba(255, 110, 110, 0.24);
+  /* text & accents tuned for dark background */
+  --text: #f8fafc; /* main readable text */
+  --muted: #c3d5f1; /* muted light tone */
+  --accent: #ff6b6b; /* red accent */
+  --accent-blue: #5fb3ff; /* blue accent */
+  --max-width: 980px;
 }
 
 /* Apply a marbled composition notebook background using a base image pattern and blending
@@ -29,13 +30,13 @@ body{
   margin:0;
   font-family: 'Roboto', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
   color:var(--text);
-  background-color:var(--bg);
-  /* Dark marbling texture: subtle light veins over deep blue */
+  background-color: var(--bg);
+  /* Dark marbling texture: soft highlights/veins on the Egyptian blue base */
   background-image:
-    radial-gradient(circle at 12% 8%, rgba(255,255,255,0.02) 0 3%, transparent 5%),
-    radial-gradient(circle at 70% 30%, rgba(255,255,255,0.015) 0 3%, transparent 5%),
+    radial-gradient(circle at 10% 12%, rgba(255,255,255,0.02) 0 3%, transparent 5%),
+    radial-gradient(circle at 80% 30%, rgba(255,255,255,0.015) 0 3%, transparent 5%),
     linear-gradient(135deg, rgba(255,255,255,0.01) 0 2%, transparent 2%),
-    linear-gradient(90deg, rgba(17,18,45,0.98), rgba(17,18,45,0.96));
+    linear-gradient(90deg, rgba(17,28,72,0.98), rgba(17,28,72,0.96));
   background-size: 1200px 1200px, 900px 900px, 600px 600px, 200px 200px;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
@@ -101,10 +102,10 @@ main{
   margin:24px 8px;
   border-radius:8px;
   /* stronger soft shadow so papers pop on the dark background */
-  box-shadow:0 10px 30px rgba(2,6,23,0.7);
+  box-shadow:0 14px 40px rgba(2,6,23,0.6);
   position:relative;
   overflow:hidden;
-  border:1px solid rgba(2,6,23,0.12);
+  border:1px solid rgba(255,255,255,0.06);
 }
 .paper-inner{
   padding:28px 28px 36px 60px; /* left padding gives space for red margin */
@@ -128,9 +129,9 @@ main{
   content:'';
   position:absolute;left:0;right:0;top:-10px;height:20px;
   background:
-    radial-gradient(circle at 10% 20%, rgba(0,0,0,0.04) 6px, transparent 10px),
-    radial-gradient(circle at 30% 40%, rgba(0,0,0,0.04) 6px, transparent 10px),
-    radial-gradient(circle at 50% 25%, rgba(0,0,0,0.04) 6px, transparent 10px),
+    radial-gradient(circle at 10% 20%, rgba(0,0,0,0.06) 6px, transparent 10px),
+    radial-gradient(circle at 30% 40%, rgba(0,0,0,0.06) 6px, transparent 10px),
+    radial-gradient(circle at 50% 25%, rgba(0,0,0,0.06) 6px, transparent 10px),
     linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,1));
   transform:rotate(-0.3deg);
 }
@@ -166,8 +167,15 @@ main{
 .project-actions{margin-top:8px;display:flex;gap:8px}
 
 /* Resume area with paperclip visual */
-.resume-inner{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
-.paperclip{margin-left:-44px;margin-top:8px}
+.resume-inner{display:flex;align-items:center;gap:18px;flex-wrap:wrap;position:relative}
+/* Position the paperclip absolutely inside the resume block so it visually "clips" the paper */
+.paperclip{
+  position:absolute;
+  left:18px; /* adjust horizontal offset to sit near top-left of the resume block */
+  top:8px;   /* slight vertical offset */
+  transform:rotate(-8deg);
+  z-index:2;
+}
 .resume-actions{display:flex;flex-direction:column;gap:6px}
 
 /* Contact grid */
@@ -202,4 +210,4 @@ main{
 code{background:rgba(0,0,0,0.04);padding:2px 6px;border-radius:4px;font-family:monospace;font-size:0.9em}
 
 /* Focus styles for keyboard users */
-a:focus, button:focus{outline:3px solid rgba(79,179,255,0.18);outline-offset:2px}
+a:focus, button:focus{outline:3px solid rgba(95,179,255,0.18);outline-offset:2px}
