@@ -8,7 +8,7 @@
 
 :root{
   /* Lighter composition notebook palette (lighter blue background) */
-  --bg: #26468F; /* medium Egyptian-blue variant per request */
+  --bg: #1434A4; /* medium Egyptian blue */
   --paper: #ffffff; /* white paper for content cards */
   /* ruled line colors - stronger but still subtle */
   --line-blue: rgba(95, 160, 255, 0.22);
@@ -19,7 +19,7 @@
   --link-color: #FFD700; /* bright gold for hyperlinks */
   --muted: #c3d5f1; /* muted light tone */
   --accent: #ff6b6b; /* red accent */
-  --accent-blue: var(--bg); /* blue accent now matches background */
+  --accent-blue: #5fb3ff; /* blue accent for highlights */
   --max-width: 980px;
 }
 
