@@ -7,15 +7,15 @@
    Customize colors and fonts at the top variables. */
 
 :root{
-  /* Dark composition notebook palette (Egyptian blue background) */
-  --bg: #112A68; /* requested main background */
+  /* Lighter composition notebook palette (lighter blue background) */
+  --bg: #dbe9ff; /* much lighter blue (about 10 shades lighter than #112A68) */
   --paper: #ffffff; /* white paper for content cards */
   /* ruled line colors - stronger but still subtle */
   --line-blue: rgba(95, 160, 255, 0.22);
   --line-red: rgba(255, 110, 110, 0.24);
   /* text & accents tuned for dark background */
   --text: #000000; /* main content text (black) for paper sections */
-  --text-on-dark: #f8fafc; /* UI text color on the dark background */
+  --text-on-dark: #071428; /* UI text color for the lighter background (dark navy) */
   --muted: #c3d5f1; /* muted light tone */
   --accent: #ff6b6b; /* red accent */
   --accent-blue: #5fb3ff; /* blue accent */
@@ -33,12 +33,12 @@ body{
   /* UI-level text (header, nav, UI chrome) should be light on the dark background */
   color:var(--text-on-dark);
   background-color: var(--bg);
-  /* Dark marbling texture: soft highlights/veins on the Egyptian blue base */
+  /* Lighter marbling texture to suit a pale blue base */
   background-image:
-    radial-gradient(circle at 10% 12%, rgba(255,255,255,0.02) 0 3%, transparent 5%),
-    radial-gradient(circle at 80% 30%, rgba(255,255,255,0.015) 0 3%, transparent 5%),
-    linear-gradient(135deg, rgba(255,255,255,0.01) 0 2%, transparent 2%),
-    linear-gradient(90deg, rgba(17,28,72,0.98), rgba(17,28,72,0.96));
+    radial-gradient(circle at 10% 12%, rgba(255,255,255,0.08) 0 3%, transparent 5%),
+    radial-gradient(circle at 80% 30%, rgba(255,255,255,0.06) 0 3%, transparent 5%),
+    linear-gradient(135deg, rgba(255,255,255,0.04) 0 2%, transparent 2%),
+    linear-gradient(90deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
   background-size: 1200px 1200px, 900px 900px, 600px 600px, 200px 200px;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
@@ -103,11 +103,11 @@ main{
   background:var(--paper);
   margin:24px 8px;
   border-radius:8px;
-  /* stronger soft shadow so papers pop on the dark background */
-  box-shadow:0 14px 40px rgba(2,6,23,0.6);
+  /* softer shadow for papers on a light background */
+  box-shadow:0 10px 24px rgba(2,6,23,0.08);
   position:relative;
   overflow:hidden;
-  border:1px solid rgba(255,255,255,0.06);
+  border:1px solid rgba(2,6,23,0.06);
 }
 .paper-inner{
   padding:28px 28px 36px 60px; /* left padding gives space for red margin */
