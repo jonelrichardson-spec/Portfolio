@@ -6,19 +6,18 @@
 
    Customize colors and fonts at the top variables. */
 
-:root{
-  /* Lighter composition notebook palette */
-  --bg:#f8fafc; /* very light marbled background */
-  --paper:#ffffff; /* clean white paper for content cards */
-  --line-blue:rgba(11,102,214,0.12); /* subtle blue rule */
-  --line-red:rgba(214,31,38,0.12); /* subtle red margin */
-  --text:#111218; /* dark text for high readability */
-  --muted:#667085; /* muted text tone */
-  --accent:#d62828; /* red accent */
-  --accent-blue:#0b66d6; /* blue accent */
-  --max-width:980px;
+:root {
+  /* Dark composition notebook palette */
+  --bg: #11122D; /* A deep, rich blue for the background */
+  --paper: #f8fafc; /* Keep the paper clean white for content cards */
+  --line-blue: rgba(11, 102, 214, 0.4); /* Make the blue rules more visible on a dark background */
+  --line-red: rgba(214, 31, 38, 0.4); /* Make the red margin more visible */
+  --text: #f8fafc; /* Light text for high readability */
+  --muted: #a6b3c2; /* Muted text tone */
+  --accent: #ff4a5b; /* A brighter red accent for contrast */
+  --accent-blue: #4a90ff; /* A brighter blue accent for contrast */
+  --max-width: 980px;
 }
-
 /* Apply a marbled composition notebook background using a base image pattern and blending
    If you prefer to ship without external assets, this uses a CSS-generated pattern fallback. */
 html,body{
